@@ -7,6 +7,7 @@ def store_in_file(soup, file):
     for link in soup.find_all(class_="card-body"):
         file.write('Title: ' + link.find(class_="title").get('title') + '\n')
         file.write('Price: ' + link.find(class_='float-end price card-title pull-right').text + '\n')
+        file.write('Description: ' + link.find(class_='description card-text').text + '\n')
         file.write('Reviews: ' + link.find(class_='float-end review-count').text + '\n\n')
 
 
